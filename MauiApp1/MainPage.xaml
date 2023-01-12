@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="MauiApp1.MainPage">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+         
+            >
+            <!-- BindingContext="{x:Static sys:DateTime.Now}" -->
+        <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+         <Label Text="{Binding Now.Year, StringFormat='The year is {0}'}" 
+                   HorizontalOptions="Center"/>
+            <Label Text="{Binding Now, StringFormat='The month is {0:MMMM}'}" 
+                     HorizontalOptions="Center"
+                   />
+            <Label Text="{Binding Now.Day, StringFormat='The day is {0}'}" 
+                     HorizontalOptions="Center"
+                   />
+            <Label Text="{Binding Now, StringFormat='The time is {0:T}'}" 
+                     HorizontalOptions="Center"
+                   />
+            <Label
+                Text="{Binding CounterValue}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+        <Label
+                Text="{Binding CounterValue, StringFormat='Welcome to .NET Multi-platform App UI: Counter value is {0:n3}'}"
+                FontSize="{Binding CounterValue}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                HorizontalOptions="Center" />
+            <Label
+               Text="Number of Gallons"
+               />
+            <Entry 
+              Text="{Binding GallonCount}" />
+            <Label
+               Text="Price of Gas"
+               />
+            <Entry 
+              Text="{Binding GasPrice}" />
+
+            <Label
+                Text="{Binding TankPrice}"
+                />
+
+            <Button
+                Text="{Binding ButtonText}"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding IncrementCounterCommand}"
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
